@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<head>
+  <title>Sonder</title>
+  <!-- name of the website -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="http://www.pngmart.com/files/8/Watercolor-Leaves-PNG-Pic.png">
+  <!-- this is the icon -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <!-- <script src="mm.js"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;
+    font-size: 20px;
+    color: #111;
+  }
+
+h6{
+  font-size: 10px;
+}
+
+  .container {
+    padding: 80px 120px;
+  }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+    -webkit-filter: none(90%);
+    filter: none(90%); /* make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: #2d2d30;
+    color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: #777;
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
+  footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+  .form-control {
+    border-radius: 0;
+  }
+  textarea {
+    resize: none;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage">Sonder</a>
+      <h6>Facta non verba.</h6>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">Home</a></li>
+        <li><a href="#leopard">Leopard</a></li>
+        <li><a href="#turtle">Turtle</a></li>
+        <li><a href="#lemur">Lemur</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#toHelp">How to Help</a></li>
+            <li><a href="#aboutUs">About Us</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://wallpaperplay.com/walls/full/9/7/d/277787.jpg" alt="picture of clouded leopard" width="1200" height="700">
+        <div class="carousel-caption">
+          <em><p>Neofelis nebulosa</p></em>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://i.pinimg.com/originals/05/6f/d4/056fd4e56c96c8f5ee96b99017582853.jpg" alt="picture of sea turtle" width="1200" height="700">
+        <div class="carousel-caption">
+          <em><p>Lepidochelys olivacea</p></em>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://wallpaperplay.com/walls/full/1/c/4/312582.jpg" alt="picture of ring-tailed lemur" width="1200" height="700">
+        <div class="carousel-caption">
+          <em><p>Lemur catta</p></em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Container (The leopard Section) -->
+<div id="leopard" class="container text-center">
+  <h3>Clouded Leopard</h3>
+  <p><em>The story of a kitten stripped from his home</em></p>
+  <p></p>
+  <br>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/tSsZVOf2KWI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+
+
+<!-- Container (turtle Section) -->
+<div id="turtle" class="bg-1">
+  <div class="container">
+    <script src="space.css"></script>
+  <!-- <body background="https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"> -->
+    <h3 class="text-center">Olive Ridley Sea Turtle</h3>
+    <p class="text-center">Follow a mother turtle as she travels to the beach and back</p>
+      <center><iframe width="560" height="315" src="https://www.youtube.com/embed/fNBMN6S1QTg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+  </div>
+</div>
+
+
+
+
+<!-- Container (lemur Section) -->
+<div id="lemur" class="container">
+  <h3 class="text-center">Ringtailed Lemur</h3>
+  <p class="text-center"><em>The tale of a pup who lost his family</em></p>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/BvJGSw99kaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+  <br><br> <br>
+
+</div>
+
+<!--HOW TO HELP SECTION-->
+<div id="toHelp" class="bg-1">
+  <div class="container">
+    <script src="space.css"></script>
+    <h3 class="text-center">How to Help</h3>
+    <p class="text-center">Links to websites where you can learn more and make a difference</p>
+    <p class="text-center"> <a href= "https://www.hsi.org/">Humane Society International</a><br> </p>
+    <p class="text-center"> <a href= "https://gifts.worldwildlife.org/gift-center/gifts/species-adoptions/clouded-leopard.aspx">Sponsor a Clouded Leopard!</a><br> </p>
+    <p class="text-center"> <a href= "https://oliveridleyproject.org/">The Olive Ridley Project</a><br> </p>
+    <p class="text-center"> <a href= "https://lemur.duke.edu/protect/overview-madagascar-conservation-programs/">The Duke Lemor Organization</a><br> </p>
+  </div>
+</div>
+
+
+
+
+<!-- ABOUT US SECTION -->
+<div id="aboutUs" class="container">
+  <h3 class="text-center">About Us</h3>
+  <p class="text-center"><em>Learn more about the creators!</em></p>
+
+  <br><br> <br>
+
+
+
+<div class="container-fluid bg-3 text-center">
+  <p><div class="row">
+    <div class="col-sm-4">
+      <p><img src="kaiyacircle.png" class="img-responsive margin" style="width:100%" alt="Image"></p>
+      <center><br><strong>Kaiya Pringle</br></strong>
+      Hi! I’m currently a senior at Providence Christian Academy. I love playing soccer and softball in my free time.</center>
+    </div>
+    <div class="col-sm-4">
+      <img src="rebeccacircle.png" class="img-responsive margin" style="width:100%" alt="Image">
+      <center><br><strong>Rebecca Alvarez</br></strong>
+      Hey guys! I am an upcoming junior at Chattahoochee High School, and I love playing video games.</center>
+    </div>
+    <div class="col-sm-4">
+      <img src="arminacircle.png" class="img-responsive margin" style="width:100%" alt="Image">
+      <center><br><strong>Armina Fani</br></strong>
+      Hello all! I’m currently a senior at Northview High School. I enjoy painting and reading books in my spare time.</center>
+    </div>
+  </div>
+</div></p>
+<br><br><br>
+
+<h3><center>Project Overview</h3></center>
+All of us are extremely passionate about the environment and risk of endangerment that faces animal populations around the world. Through this project, we aim to bring awareness to the existential threats that face our favorite animals, and provide resources and tips to help them out.
+
+</div>
+
+
+  <script>
+  $(document).ready(function(){
+    // Initialize Tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  })
+  </script>
+
+</body>
+</html>
